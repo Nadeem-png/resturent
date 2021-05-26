@@ -38,19 +38,19 @@
    <button class="btn btn-outline btn-outline-danger mr-3 px-4 py-2">Place Order</button>
     <button class="btn btn-warning px-4 py-2 ">See More</button></div>
 </div>
-<div class="container container-md container-sm mt-5 mx-5 p-3">
+<div class="container container-md mt-5 mx-5 p-3">
 <div class="row d-flex justify-content-center align-items-center mx-lg-5 mx-md-5">
 <div class="col-lg-6 col-sm-">
 <h5 style="border-bottom: 2px solid yellow;width: 20%">Best Food</h5>
 
     <h1>Welcome To Royal</h1>
     <p>
-        We’ve been getting sick of using the same boring Latin text<br>
-        so we’ve found some really cool Lorem Ipsum Text Generators.<br>
-        I hope you can enjoy these as much as we do.<br>
-         We’ve been getting sick of using the same boring Latin text<br>
-        so we’ve found some really cool Lorem Ipsum Text Generators.<br>
-        I hope you can enjoy these as much as we do.
+        We’ve been getting sick of using the same boring Latin text
+        so we’ve found <br>some really cool Lorem Ipsum Text Generators.
+        I hope you can enjoy these<br> as much as we do.
+         We’ve been getting sick of using the same<br> boring Latin text
+        so we’ve found some really cool<br> Lorem Ipsum Text Generators.
+        I hope you can enjoy these <br>as much as we do.
     </p>
 </div>
 <div class="col-lg-6 ">
