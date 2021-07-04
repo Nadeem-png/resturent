@@ -14,23 +14,6 @@
 
 ------------------------------*/
  
-body {
- 
-  position: relative;
- 
-  overflow-x: hidden;
- 
-}
- 
-body,
- 
-html {
- 
-  height: 100%;
- 
-  background-color: #583e7e;
- 
-}
  
 .nav .open > a {
  
