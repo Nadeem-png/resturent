@@ -11,222 +11,707 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/9ddc0bba90.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        * {
-            font-family:Arial;
-        }
-        .nav-bar {
-            height: 70px;
-            background: red;
-        }
 
-        .brand {
-            position: absolute;
-            padding-left: 20px;
-            float: left;
-            line-height: 70px;
-            text-transform: uppercase;
-            font-size: 20px;
-
-        }
-        .brand a img {
-            max-height: 70px;
-        }
-        .brand a,
-        .brand a:visited {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        nav {
-            float: right;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        nav ul li {
-            float: left;
-            position: relative;
-        }
-        nav ul li a,
-        nav ul li a:visited {
-            display: block;
-            padding: 0 20px;
-            line-height: 70px;
-            background: red;
-            color: #ffffff;
-            text-decoration: none;
-        }
-        nav ul li a:hover,
-        nav ul li a:visited:hover {
-            background: #2ab1ce;
-            color: #ffffff;
-        }
-        nav ul li a:not(:only-child):after,
-        nav ul li a:visited:not(:only-child):after {
-            padding-left: 4px;
-            content: ' ▾';
-        }
-        nav ul li ul li {
-            min-width: 190px;
-        }
-        nav ul li ul li a {
-            padding: 15px;
-            line-height: 20px;
-        }
-
-        .nav-dropdown {
-            position: absolute;
-            display: none;
-            z-index: 1;
-            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-        }
-        .nav-mobile {
-            display: none;
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: #262626;
-            height: 70px;
-            width: 70px;
-        }
-
-        @media only screen and (max-width: 798px) {
-            .nav-mobile {
-                display: block;
-            }
-
-            nav {
-                width: 100%;
-                padding: 70px 0 15px;
-            }
-            nav ul {
-                display: none;
-            }
-            nav ul li {
-                float: none;
-            }
-            nav ul li a {
-                padding: 15px;
-                line-height: 20px;
-                padding-left: 25%;
-
-            }
-            nav ul li ul li a {
-                padding-left: 30%;
-            }
-
-            .nav-dropdown {
-                position: static;
-            }
-            .brand a img {
-                max-height: 60px;
-                margin-top: 5px;
-            }
-        }
-        @media screen and (min-width: 799px) {
-            .nav-list {
-                display: block !important;
-            }
-        }
-        #nav-toggle {
-            position: absolute;
-            left: 18px;
-            top: 22px;
-            cursor: pointer;
-            padding: 10px 35px 16px 0px;
-        }
-        #nav-toggle span,
-        #nav-toggle span:before,
-        #nav-toggle span:after {
-            cursor: pointer;
-            border-radius: 1px;
-            height: 5px;
-            width: 35px;
-            background: #ffffff;
-            position: absolute;
-            display: block;
-            content: '';
-            transition: all 300ms ease-in-out;
-        }
-        #nav-toggle span:before {
-            top: -10px;
-        }
-        #nav-toggle span:after {
-            bottom: -10px;
-        }
-        #nav-toggle.active span {
-            background-color: transparent;
-        }
-        #nav-toggle.active span:before, #nav-toggle.active span:after {
-            top: 0;
-        }
-        #nav-toggle.active span:before {
-            transform: rotate(45deg);
-        }
-        #nav-toggle.active span:after {
-            transform: rotate(-45deg);
-        }
-        #footer{
-            background-color:rgb(49, 51, 51);
-            width:100%;
-        }
-
-
-    </style>
+------------------------------*/
+ 
+body {
+ 
+  position: relative;
+ 
+  overflow-x: hidden;
+ 
+}
+ 
+body,
+ 
+html {
+ 
+  height: 100%;
+ 
+  background-color: #583e7e;
+ 
+}
+ 
+.nav .open > a {
+ 
+  background-color: transparent;
+ 
+}
+ 
+.nav .open > a:hover {
+ 
+  background-color: transparent;
+ 
+}
+ 
+.nav .open > a:focus {
+ 
+  background-color: transparent;
+ 
+}
+ 
+/*-------------------------------*/
+ 
+/*           Wrappers            */
+ 
+/*-------------------------------*/
+ 
+#wrapper {
+ 
+  -moz-transition: all 0.5s ease;
+ 
+  -o-transition: all 0.5s ease;
+ 
+  -webkit-transition: all 0.5s ease;
+ 
+  padding-left: 0;
+ 
+  transition: all 0.5s ease;
+ 
+}
+ 
+#wrapper.toggled {
+ 
+  padding-left: 220px;
+ 
+}
+ 
+#wrapper.toggled #sidebar-wrapper {
+ 
+  width: 220px;
+ 
+}
+ 
+#wrapper.toggled #page-content-wrapper {
+ 
+  margin-right: -220px;
+ 
+  position: absolute;
+ 
+}
+ 
+#sidebar-wrapper {
+ 
+  -moz-transition: all 0.5s ease;
+ 
+  -o-transition: all 0.5s ease;
+ 
+  -webkit-transition: all 0.5s ease;
+ 
+  background: #1a1a1a;
+ 
+  height: 100%;
+ 
+  left: 220px;
+ 
+  margin-left: -220px;
+ 
+  overflow-x: hidden;
+ 
+  overflow-y: auto;
+ 
+  transition: all 0.5s ease;
+ 
+  width: 0;
+ 
+  z-index: 1000;
+ 
+}
+ 
+#sidebar-wrapper::-webkit-scrollbar {
+ 
+  display: none;
+ 
+}
+ 
+#page-content-wrapper {
+ 
+  padding-top: 70px;
+ 
+  width: 100%;
+ 
+}
+ 
+/*-------------------------------*/
+ 
+/*     Sidebar nav styles        */
+ 
+/*-------------------------------*/
+ 
+.sidebar-nav {
+ 
+  list-style: none;
+ 
+  margin: 0;
+ 
+  padding: 0;
+ 
+  position: absolute;
+ 
+  top: 0;
+ 
+  width: 220px;
+ 
+}
+ 
+.sidebar-nav li {
+ 
+  display: inline-block;
+ 
+  line-height: 20px;
+ 
+  position: relative;
+ 
+  width: 100%;
+ 
+}
+ 
+.sidebar-nav li:before {
+ 
+  background-color: #1c1c1c;
+ 
+  content: '';
+ 
+  height: 100%;
+ 
+  left: 0;
+ 
+  position: absolute;
+ 
+  top: 0;
+ 
+  -webkit-transition: width 0.2s ease-in;
+ 
+  transition: width 0.2s ease-in;
+ 
+  width: 3px;
+ 
+  z-index: -1;
+ 
+}
+ 
+.sidebar-nav li:first-child a {
+ 
+  background-color: #1a1a1a;
+ 
+  color: #ffffff;
+ 
+}
+ 
+.sidebar-nav li:nth-child(2):before {
+ 
+  background-color: #402d5c;
+ 
+}
+ 
+.sidebar-nav li:nth-child(3):before {
+ 
+  background-color: #4c366d;
+ 
+}
+ 
+.sidebar-nav li:nth-child(4):before {
+ 
+  background-color: #583e7e;
+ 
+}
+ 
+.sidebar-nav li:nth-child(5):before {
+ 
+  background-color: #64468f;
+ 
+}
+ 
+.sidebar-nav li:nth-child(6):before {
+ 
+  background-color: #704fa0;
+ 
+}
+ 
+.sidebar-nav li:nth-child(7):before {
+ 
+  background-color: #7c5aae;
+ 
+}
+ 
+.sidebar-nav li:nth-child(8):before {
+ 
+  background-color: #8a6cb6;
+ 
+}
+ 
+.sidebar-nav li:nth-child(9):before {
+ 
+  background-color: #987dbf;
+ 
+}
+ 
+.sidebar-nav li:hover:before {
+ 
+  -webkit-transition: width 0.2s ease-in;
+ 
+  transition: width 0.2s ease-in;
+ 
+  width: 100%;
+ 
+}
+ 
+.sidebar-nav li a {
+ 
+  color: #dddddd;
+ 
+  display: block;
+ 
+  padding: 10px 15px 10px 30px;
+ 
+  text-decoration: none;
+ 
+}
+ 
+.sidebar-nav li.open:hover before {
+ 
+  -webkit-transition: width 0.2s ease-in;
+ 
+  transition: width 0.2s ease-in;
+ 
+  width: 100%;
+ 
+}
+ 
+.sidebar-nav .dropdown-menu {
+ 
+  background-color: #222222;
+ 
+  border-radius: 0;
+ 
+  border: none;
+ 
+  box-shadow: none;
+ 
+  margin: 0;
+ 
+  padding: 0;
+ 
+  position: relative;
+ 
+  width: 100%;
+ 
+}
+ 
+.sidebar-nav li a:hover,
+ 
+.sidebar-nav li a:active,
+ 
+.sidebar-nav li a:focus,
+ 
+.sidebar-nav li.open a:hover,
+ 
+.sidebar-nav li.open a:active,
+ 
+.sidebar-nav li.open a:focus {
+ 
+  background-color: transparent;
+ 
+  color: #ffffff;
+ 
+  text-decoration: none;
+ 
+}
+ 
+.sidebar-nav > .sidebar-brand {
+ 
+  font-size: 20px;
+ 
+  height: 65px;
+ 
+  line-height: 44px;
+ 
+}
+ 
+/*-------------------------------*/
+ 
+/*       Hamburger-Cross         */
+ 
+/*-------------------------------*/
+ 
+.hamburger {
+ 
+  background: transparent;
+ 
+  border: none;
+ 
+  display: block;
+ 
+  height: 32px;
+ 
+  margin-left: 15px;
+ 
+  position: fixed;
+ 
+  top: 20px;
+ 
+  width: 32px;
+ 
+  z-index: 999;
+ 
+}
+ 
+.hamburger:hover {
+ 
+  outline: none;
+ 
+}
+ 
+.hamburger:focus {
+ 
+  outline: none;
+ 
+}
+ 
+.hamburger:active {
+ 
+  outline: none;
+ 
+}
+ 
+.hamburger.is-closed:before {
+ 
+  -webkit-transform: translate3d(0, 0, 0);
+ 
+  -webkit-transition: all 0.35s ease-in-out;
+ 
+  color: #ffffff;
+ 
+  content: '';
+ 
+  display: block;
+ 
+  font-size: 14px;
+ 
+  line-height: 32px;
+ 
+  opacity: 0;
+ 
+  text-align: center;
+ 
+  width: 100px;
+ 
+}
+ 
+.hamburger.is-closed:hover before {
+ 
+  -webkit-transform: translate3d(-100px, 0, 0);
+ 
+  -webkit-transition: all 0.35s ease-in-out;
+ 
+  display: block;
+ 
+  opacity: 1;
+ 
+}
+ 
+.hamburger.is-closed:hover .hamb-top {
+ 
+  -webkit-transition: all 0.35s ease-in-out;
+ 
+  top: 0;
+ 
+}
+ 
+.hamburger.is-closed:hover .hamb-bottom {
+ 
+  -webkit-transition: all 0.35s ease-in-out;
+ 
+  bottom: 0;
+ 
+}
+ 
+.hamburger.is-closed .hamb-top {
+ 
+  -webkit-transition: all 0.35s ease-in-out;
+ 
+  background-color: rgba(255, 255, 255, 0.7);
+ 
+  top: 5px;
+ 
+}
+ 
+.hamburger.is-closed .hamb-middle {
+ 
+  background-color: rgba(255, 255, 255, 0.7);
+ 
+  margin-top: -2px;
+ 
+  top: 50%;
+ 
+}
+ 
+.hamburger.is-closed .hamb-bottom {
+ 
+  -webkit-transition: all 0.35s ease-in-out;
+ 
+  background-color: rgba(255, 255, 255, 0.7);
+ 
+  bottom: 5px;
+ 
+}
+ 
+.hamburger.is-closed .hamb-top,
+ 
+.hamburger.is-closed .hamb-middle,
+ 
+.hamburger.is-closed .hamb-bottom,
+ 
+.hamburger.is-open .hamb-top,
+ 
+.hamburger.is-open .hamb-middle,
+ 
+.hamburger.is-open .hamb-bottom {
+ 
+  height: 4px;
+ 
+  left: 0;
+ 
+  position: absolute;
+ 
+  width: 100%;
+ 
+}
+ 
+.hamburger.is-open .hamb-top {
+ 
+  -webkit-transform: rotate(45deg);
+ 
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+ 
+  background-color: #fff;
+ 
+  margin-top: -2px;
+ 
+  top: 50%;
+ 
+}
+ 
+.hamburger.is-open .hamb-middle {
+ 
+  background-color: #fff;
+ 
+  display: none;
+ 
+}
+ 
+.hamburger.is-open .hamb-bottom {
+ 
+  -webkit-transform: rotate(-45deg);
+ 
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
+ 
+  background-color: #fff;
+ 
+  margin-top: -2px;
+ 
+  top: 50%;
+ 
+}
+ 
+.hamburger.is-open:before {
+ 
+  -webkit-transform: translate3d(0, 0, 0);
+ 
+  -webkit-transition: all 0.35s ease-in-out;
+ 
+  color: #ffffff;
+ 
+  content: '';
+ 
+  display: block;
+ 
+  font-size: 14px;
+ 
+  line-height: 32px;
+ 
+  opacity: 0;
+ 
+  text-align: center;
+ 
+  width: 100px;
+ 
+}
+ 
+.hamburger.is-open:hover before {
+ 
+  -webkit-transform: translate3d(-100px, 0, 0);
+ 
+  -webkit-transition: all 0.35s ease-in-out;
+ 
+  display: block;
+ 
+  opacity: 1;
+ 
+}
+ 
+/*-------------------------------*/
+ 
+/*          Dark Overlay         */
+ 
+/*-------------------------------*/
+ 
+.overlay {
+ 
+  position: fixed;
+ 
+  display: none;
+ 
+  width: 100%;
+ 
+  height: 100%;
+ 
+  top: 0;
+ 
+  left: 0;
+ 
+  right: 0;
+ 
+  bottom: 0;
+ 
+  background-color: rgba(0, 0, 0, 0.4);
+ 
+  z-index: 1;
+ 
+}
+ 
+/* SOME DEMO STYLES - NOT REQUIRED */
+ 
+body,
+ 
+html {
+ 
+  background-color: #583e7e;
+ 
+}
+ 
+body h1,
+ 
+body h2,
+ 
+body h3,
+ 
+body h4 {
+ 
+  color: rgba(255, 255, 255, 0.9);
+ 
+}
+ 
+body p,
+ 
+body blockquote {
+ 
+  color: rgba(255, 255, 255, 0.7);
+ 
+}
+ 
+body a {
+ 
+  color: rgba(255, 255, 255, 0.8);
+ 
+  text-decoration: underline;
+ 
+}
+ 
+body a:hover {
+ 
+  color: #fff;
+ 
+}
+ 
+ 
+ 
+</style>
+        </style>
 </head>
 
 <body>
 
-<section class="nav-bar">
-    <div class="nav-container">
-        <div class="brand">
-            <a href="home.html"><img src={{asset('img/logoo.png')}}></a>
-        </div>
-        <nav>
-            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
-            <ul class="nav-list">
-                <li>
-                    <a href="../home.html">Home</a>
-                </li>
-                <li>
-                    <a href="#">Blog</a>
-                </li>
-                <li>
-                    <a href="#">Cites</a>
-                    <ul class="nav-dropdown">
-                        <li>
-                            <a href="#">Lahore</a>
-                        </li>
-                        <li>
-                            <a href="#">Karachi</a>
-                        </li>
-                        <li>
-                            <a href="#">Islamabad</a>
-                        </li>
-                    </ul>
-                </li>
 
-                <li>
-                    <a href="#!">Contact Us</a>
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+ 
+            <ul class="nav sidebar-nav">
+ 
+                <li class="sidebar-brand">
+ 
+                    <a href="#">
+ 
+                       Bootstrap 3
+ 
+                    </a>
+ 
                 </li>
+ 
                 <li>
-                    <a href="#">About</a>
+ 
+                    <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+ 
                 </li>
+ 
+                <li>
+ 
+                    <a href="#"><i class="fa fa-fw fa-folder"></i> Bootstrap</a>
+ 
+                </li>
+ 
+                <li>
+ 
+                    <a href="#"><i class="fa fa-fw fa-file-o"></i> jQuery</a>
+ 
+                </li>
+ 
+                <li>
+ 
+                    <a href="#"><i class="fa fa-fw fa-cog"></i> HTML</a>
+ 
+                </li>
+ 
+                <li class="dropdown">
+ 
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> High Level <span class="caret"></span></a>
+ 
+                  <ul class="dropdown-menu" role="menu">
+ 
+                    <li><a href="#">Java</a></li>
+ 
+                    <li><a href="#">Python</a></li>
+ 
+                    <li><a href="#">Separated link</a></li>
+ 
+                    <li><a href="#">C Sharp</a></li>
+ 
+                  </ul>
+ 
+                </li>
+ 
+                <li>
+ 
+                    <a href="#"><i class="fa fa-fw fa-bank"></i> CSS</a>
+ 
+                </li>
+ 
+                <li>
+ 
+                    <a href="#"><i class="fa fa-fw fa-dropbox"></i> AngularJS</a>
+ 
+                </li>
+ 
+                <li>
+ 
+                    <a href="#"><i class="fa fa-fw fa-twitter"></i> SQL</a>
+ 
+                </li>
+ 
             </ul>
+ 
         </nav>
-    </div>
-</section>
+ 
+        <!-- /#sidebar-wrapper -->
 @yield('content')
 
 
@@ -321,33 +806,64 @@
     </div>
 </footer>
 <script>
-    $(document).ready(function () {
-     setTimeout(function () {
-      $(".alert").alert("close");
-     },4000);
-    });
-</script>
-<script>
-    (function($) {
-        $(function() {
-            $('nav ul li a:not(:only-child)').click(function(e) {
-                $(this).siblings('.nav-dropdown').toggle();
-                $('.dropdown').not($(this).siblings()).hide();
-                e.stopPropagation();
+ 
+            $(document).ready(function () {
+ 
+              var trigger = $('.hamburger'),
+ 
+                  overlay = $('.overlay'),
+ 
+                 isClosed = false;
+ 
+ 
+ 
+                trigger.click(function () {
+ 
+                  hamburger_cross();     
+ 
+                });
+ 
+ 
+ 
+                function hamburger_cross() {
+ 
+ 
+ 
+                  if (isClosed == true) {         
+ 
+                    overlay.hide();
+ 
+                    trigger.removeClass('is-open');
+ 
+                    trigger.addClass('is-closed');
+ 
+                    isClosed = false;
+ 
+                  } else {  
+ 
+                    overlay.show();
+ 
+                    trigger.removeClass('is-closed');
+ 
+                    trigger.addClass('is-open');
+ 
+                    isClosed = true;
+ 
+                  }
+ 
+              }
+ 
+ 
+ 
+              $('[data-toggle="offcanvas"]').click(function () {
+ 
+                    $('#wrapper').toggleClass('toggled');
+ 
+              }); 
+ 
             });
-            $('html').click(function() {
-                $('.nav-dropdown').hide();
-            });
-            $('#nav-toggle').click(function() {
-                $('nav ul').slideToggle();
-            });
-            $('#nav-toggle').on('click', function() {
-                this.classList.toggle('active');
-            });
-        });
-    })(jQuery);
-
-</script>
+ 
+        </script>
 </body>
 
 </html>
